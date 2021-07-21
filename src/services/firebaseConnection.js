@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/firestore';
 
 let firebaseConfig = {
     apiKey: "AIzaSyBS0SsZiUceiNXvQXyo6R4F4WXvlQgX5ck",
