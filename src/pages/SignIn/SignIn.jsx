@@ -1,16 +1,19 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles.module.scss';
-
+import { AuthContext } from '../../contexts/auth';
 import Logo from '../../assets/logo.png';
 
 function SignIn() {
   const [email, setEmail] = useState('');
-  const [passoword, setPassoword] = useState('');
+  const [password, setPassword] = useState('');
+
+  const { signIn, loadingAuth } = useContext(AuthContext);
 
   function handleSubmit(e) {
     e.preventDefault();
-    alert('cliclo')
+    if( email !== '' && password !== '')
+      signIn(email, password)
   }
 
     return (
@@ -24,8 +27,8 @@ function SignIn() {
           <form onSubmit={handleSubmit}>
             <h1>Entrar</h1>
             <input type="email" placeholder="email@email.com" value={email} onChange={(e) => setEmail(e.target.value) } required />
-            <input type="password" placeholder="*******" value={passoword} onChange={(e) => setPassoword(e.target.value) } required />
-            <button type="submit">Acessar</button>
+            <input type="password" placeholder="*******" value={password} onChange={(e) => setPassword(e.target.value) } required />
+            <button type="submit">{loadingAuth ? 'Carregando...' : 'Acessar'}</button>
           </form>
 
         <Link to="/register">Criar uma conta</Link>
