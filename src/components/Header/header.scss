@@ -1,0 +1,82 @@
+.sidebar{
+    margin: 0;
+    padding: 0;
+    width: 12.5rem;
+    background-color: var(--darkBlue);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar div {
+    background: url('../../assets/cover.png');
+    background-color: var(--darkBlue);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 9.375rem;
+}
+
+.sidebar div {
+    padding-top: 1.8rem;
+}
+
+.sidebar div img {
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    width: 5.625rem;
+    height: 5.625rem;
+    -webkit-filter: drop-shadow(2px 3px 6px var(--black)); //web kit pros navegadores mais antigos . ele reconhece os navegadores mais antigos. 
+    filter: drop-shadow(2px 3px 6px var(--black));
+    object-fit: cover;
+}
+
+.sidebar a {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: ease-in-out .4s;
+}
+
+.sidebar a svg {
+    margin-right: .5rem;
+}
+
+.sidebar a:hover {
+    background-color: var(--sof-black);
+    color: var(--white);
+}
+
+@media screen and (max-width: 720px){
+    .sidebar{
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar a{
+        float: left;
+    }
+    .sidebar div{
+        display: none;
+    }
+    .sidebar a svg{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .sidebar a {
+        text-align: center;
+        float: center;
+    }
+    .sidebar a svg {
+        display: none;
+    }
+}
+
+

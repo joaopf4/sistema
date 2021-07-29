@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
 
 * {
   margin: 0;
@@ -13,6 +14,7 @@
     --white: #eaeaec;
     --black: #121212;
     --darkBlue: #181c2e;
+    --sof-black: rgba(224, 224, 224, 0.4);
 }
 
 html,
@@ -20,10 +22,24 @@ body,
 #root {
   height: 100%;
 }
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media (max-width: 720px) {
+  html {
+    font-size: 12px;
+  }
+}
 
 body {
-  font: 14px "Roboto", sans-serif;
   background-color: #efefef;
+  font-family: 'Gowun Dodum', sans-serif;
 }
 a {
   text-decoration: none;
