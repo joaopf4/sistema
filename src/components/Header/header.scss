@@ -41,6 +41,9 @@
     flex-direction: row;
     align-items: center;
     transition: ease-in-out .4s;
+    .icons {
+        font-size: 1.5rem;
+    }
 }
 
 .sidebar a svg {
@@ -52,6 +55,11 @@
     color: var(--white);
 }
 
+.content {
+    margin-left: 12.5rem;
+    padding: .07rem 1rem;
+}
+
 @media screen and (max-width: 720px){
     .sidebar{
         width: 100%;
@@ -60,16 +68,19 @@
     }
     .sidebar a{
         float: left;
+        .icons {
+            font-size: 1.2rem;
+        }
     }
     .sidebar div{
         display: none;
     }
-    .sidebar a svg{
-        display: none;
-    }
+    .content {
+        margin-left: 0;
+    }    
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 300px){
     .sidebar a {
         text-align: center;
         float: center;
