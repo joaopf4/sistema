@@ -7,6 +7,7 @@ import avatar from "../../assets/avatar.png";
 import firebase from "../../services/firebaseConnection";
 import { AuthContext } from "../../contexts/auth";
 
+import { toast } from 'react-toastify';
 import { FiSettings, FiUpload } from "react-icons/fi";
 
 export default function Profile() {
@@ -88,6 +89,7 @@ export default function Profile() {
         setUser(data);
         storageUser(data);
         setLoadingUpdate(false);
+        toast.info('Alteração feita com sucesso')
       })
     }
     else if (nome !== '' && imageAvatar !== null) {
